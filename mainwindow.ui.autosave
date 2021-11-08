@@ -17,8 +17,8 @@
    <widget class="QTabWidget" name="ajouterr">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
+      <x>10</x>
+      <y>10</y>
       <width>921</width>
       <height>641</height>
      </rect>
@@ -277,8 +277,8 @@
      <widget class="QGroupBox" name="groupBox_2">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>20</y>
+        <x>280</x>
+        <y>10</y>
         <width>401</width>
         <height>341</height>
        </rect>
@@ -289,8 +289,8 @@
       <widget class="QLabel" name="label_6">
        <property name="geometry">
         <rect>
-         <x>220</x>
-         <y>310</y>
+         <x>40</x>
+         <y>220</y>
          <width>56</width>
          <height>20</height>
         </rect>
@@ -341,9 +341,9 @@
       <widget class="QLineEdit" name="le_code_2">
        <property name="geometry">
         <rect>
-         <x>280</x>
-         <y>310</y>
-         <width>101</width>
+         <x>110</x>
+         <y>230</y>
+         <width>111</width>
          <height>21</height>
         </rect>
        </property>
@@ -381,8 +381,8 @@
       <widget class="QPushButton" name="Button_Modification">
        <property name="geometry">
         <rect>
-         <x>130</x>
-         <y>240</y>
+         <x>220</x>
+         <y>290</y>
          <width>80</width>
          <height>25</height>
         </rect>
