@@ -23,6 +23,12 @@ private slots:
 
     void on_Button_Modification_clicked();
 
+    void on_trier_clicked();
+
+void on_pb_statistique_clicked();
+            void on_recherche_editingFinished();
+
+
 private:
     Ui::MainWindow *ui;
     Materiels M1;

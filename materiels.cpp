@@ -35,6 +35,18 @@ QString matricule_string= QString::number(code_mat);
 
 
 }
+
+QStringList Materiels::lister(){
+QSqlQuery q;
+q.prepare("select code_mat from materiels");
+q.exec();
+QStringList l;
+while(q.next()){
+l<<q.value(0).toString();
+}
+return l;
+}
+
 bool Materiels::supprimer(int code_mat)
 {
     QSqlQuery query;
@@ -75,3 +87,28 @@ bool Materiels :: modifier(int code_mat)
            return    query.exec();
 
 }
+
+QSqlQueryModel* Materiels::trier_alphapetique()
+{
+
+    QSqlQuery *q = new QSqlQuery();
+    QSqlQueryModel *model = new QSqlQueryModel();
+    q->prepare("SELECT * FROM  MATERIELS ORDER BY intitule_mat ASC ");
+    q->exec();
+    model->setQuery(*q);
+    return model;
+
+}
+
+QSqlQueryModel* Materiels::rechercher(QString intitule_mat)
+ {
+     QSqlQueryModel * model= new QSqlQueryModel();
+     model->setQuery("select * from MATERIELS where intitule_mat LIKE '"+intitule_mat+"%'");
+
+
+     model->setHeaderData(0, Qt::Horizontal,QObject :: tr("intitule_mat"));
+     model->setHeaderData(1, Qt::Horizontal, QObject :: tr("code_mat"));
+    model->setHeaderData(2, Qt::Horizontal, QObject :: tr("fournisseur"));
+     model->setHeaderData(3, Qt::Horizontal, QObject :: tr("quantite_mat"));
+     return model;
+     }

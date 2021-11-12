@@ -2,6 +2,7 @@
 #define materiels_H
 #include <QString>
 #include <QSqlQueryModel>
+#include <QMainWindow>
 
 class Materiels
 {
@@ -20,10 +21,16 @@ public:
     QSqlQueryModel* afficher();
     bool supprimer(int);
     bool modifier(int code_mat);
+      QStringList lister();
+      QSqlQueryModel* trier_alphapetique();
+
+       QSqlQueryModel* rechercher(QString);
+
 private:
     QString intitule_mat,fournisseur;
     int code_mat;
     int quantite_mat;
+
 
 };
 
