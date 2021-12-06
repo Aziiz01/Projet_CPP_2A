@@ -4,9 +4,9 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       += core gui sql charts
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets quickwidgets
 
 TARGET = Atelier_Connexion
 TEMPLATE = app
@@ -28,12 +28,13 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     connection.cpp \
-    materiels.cpp
+    reservation.cpp
+QT += printsupport
 
 HEADERS += \
         mainwindow.h \
     connection.h \
-    materiels.h
+    reservation.h
 
 FORMS += \
         mainwindow.ui
@@ -42,3 +43,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    qml.qrc
